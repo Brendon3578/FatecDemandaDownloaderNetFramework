@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.916
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatecDemandaDownloaderNetFramework", "FatecDemandaDownloaderNetFramework\FatecDemandaDownloaderNetFramework.csproj", "{D61F8A06-C251-4386-8E50-BF9B6A414AC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{CA08BB02-099E-41D0-8564-69E8F1A284E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D61F8A06-C251-4386-8E50-BF9B6A414AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D61F8A06-C251-4386-8E50-BF9B6A414AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D61F8A06-C251-4386-8E50-BF9B6A414AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA08BB02-099E-41D0-8564-69E8F1A284E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA08BB02-099E-41D0-8564-69E8F1A284E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA08BB02-099E-41D0-8564-69E8F1A284E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA08BB02-099E-41D0-8564-69E8F1A284E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
