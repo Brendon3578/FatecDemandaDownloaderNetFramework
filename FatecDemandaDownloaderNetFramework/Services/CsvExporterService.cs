@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using static FatecDemandaDownloaderNetFramework.Utils;
 
 namespace FatecDemandaDownloaderNetFramework.Services
 {
@@ -10,6 +10,8 @@ namespace FatecDemandaDownloaderNetFramework.Services
     {
         public static void SaveToCsv(List<DemandaFatec> records, string fileName)
         {
+            Log("Saving data to CSV file...");
+
             var csvBuilder = new StringBuilder();
             csvBuilder.AppendLine("Fatec;Ano;Semestre;Curso;Periodo;Inscritos;Vagas;Demanda");
 
@@ -20,7 +22,7 @@ namespace FatecDemandaDownloaderNetFramework.Services
             }
 
             File.WriteAllText(fileName, csvBuilder.ToString(), Encoding.UTF8);
-            Console.WriteLine($"File '{fileName}' saved successfully!");
+            Log($"File '{fileName}' saved successfully!");
         }
 
         private static string EscapeCsv(string value)
@@ -32,6 +34,5 @@ namespace FatecDemandaDownloaderNetFramework.Services
             }
             return value;
         }
-
     }
 }
