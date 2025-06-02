@@ -24,14 +24,14 @@ namespace FatecDemandaDownloaderNetFramework.Services
         private IWebDriver CreateWebDriver()
         {
             var options = new ChromeOptions();
-            //options.AddArgument("--headless");
-            //options.AddArgument("--disable-gpu");
-            //options.AddArgument("--disable-extensions");
-            //options.AddUserProfilePreference("profile.default_content_setting_values.images", 2);
+            options.AddArgument("--headless");
+            options.AddArgument("--disable-gpu");
+            options.AddArgument("--disable-extensions");
+            options.AddUserProfilePreference("profile.default_content_setting_values.images", 2);
 
             var stringArguments = options.Arguments.Any() ? $" arguments: {string.Join(", ", options.Arguments)}" : "no arguments";
 
-            Log($"Starting the driver with browser: '{options.BrowserName}' version: '{options.BrowserVersion}' with {stringArguments}");
+            Log($"Starting the web driver with browser '{options.BrowserName}', version: '{options.BrowserVersion}', with {stringArguments}");
             return new ChromeDriver(options);
         }
 
