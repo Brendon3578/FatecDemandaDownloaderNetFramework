@@ -38,7 +38,7 @@ namespace FatecDemandaDownloaderNetFramework.Services
         public async Task ExecuteAsync()
         {
             _driver = CreateWebDriver();
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
 
             _fatecHelper = new SelectFatecHelper(_driver);
             _homeHelper = new HomeDemandasHelper(_driver);

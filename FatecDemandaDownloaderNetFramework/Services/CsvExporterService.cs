@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
@@ -21,8 +22,16 @@ namespace FatecDemandaDownloaderNetFramework.Services
                 csvBuilder.AppendLine($"{EscapeCsv(record.Fatec)};{record.Ano};{record.Semestre};{EscapeCsv(record.Curso)};{EscapeCsv(record.Periodo)};{record.Inscritos};{record.Vagas};{demandFormatted}");
             }
 
-            File.WriteAllText(fileName, csvBuilder.ToString(), Encoding.UTF8);
-            Log($"File '{fileName}' saved successfully!");
+            var exportDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "export");
+
+            Directory.CreateDirectory(exportDir);
+
+            var exportPath = Path.Combine(exportDir, fileName);
+
+            File.WriteAllText(exportPath, csvBuilder.ToString(), Encoding.UTF8);
+
+            Log($"File {fileName} saved successfully in:");
+            Log($"- {exportPath}");
         }
 
         private static string EscapeCsv(string value)
