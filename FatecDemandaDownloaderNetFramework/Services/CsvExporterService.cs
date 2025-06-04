@@ -14,12 +14,12 @@ namespace FatecDemandaDownloaderNetFramework.Services
             Log("Saving data to CSV file...");
 
             var csvBuilder = new StringBuilder();
-            csvBuilder.AppendLine("Fatec;Ano;Semestre;Curso;Periodo;Inscritos;Vagas;Demanda");
+            csvBuilder.AppendLine("Fatec,Ano,Semestre,Curso,Periodo,Inscritos,Vagas,Demanda");
 
             foreach (var record in records)
             {
                 string demandFormatted = record.Demanda.ToString("F2", CultureInfo.InvariantCulture);
-                csvBuilder.AppendLine($"{EscapeCsv(record.Fatec)};{record.Ano};{record.Semestre};{EscapeCsv(record.Curso)};{EscapeCsv(record.Periodo)};{record.Inscritos};{record.Vagas};{demandFormatted}");
+                csvBuilder.AppendLine($"{EscapeCsv(record.Fatec)},{record.Ano},{record.Semestre},{EscapeCsv(record.Curso)},{EscapeCsv(record.Periodo)},{record.Inscritos},{record.Vagas},{demandFormatted}");
             }
 
             var exportDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "export");
@@ -36,7 +36,7 @@ namespace FatecDemandaDownloaderNetFramework.Services
 
         private static string EscapeCsv(string value)
         {
-            if (value.Contains(";") || value.Contains("\""))
+            if (value.Contains(",") || value.Contains("\""))
             {
                 value = value.Replace("\"", "\"\"");
                 value = $"\"{value}\"";
