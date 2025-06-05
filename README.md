@@ -2,9 +2,15 @@
 
 Este projeto automatiza o processo de download de dados de demanda de cursos das FATECs por meio de Web Scraping, utilizando **Selenium WebDriver** com o navegador **Chrome**.
 
-Apenas a fatec de mauá está selecionada para o projeto de exportação.
+Apenas a Fatec de Mauá está selecionada para o projeto de exportação.
 
 Os dados coletados são exportados para um arquivo `.csv`.
+
+<p align="center">
+    <kbd>
+        <img src="./thumbnail.png" style="border-radius: 5px" alt="Exemplo de execução" width="600px">
+    </kbd>
+</p>
 
 ---
 
@@ -85,12 +91,12 @@ Os testes cobrem funções auxiliares como:
 ```
 FatecDemandaDownloaderNetFramework/
 │
-├── Pages/                      # Classes auxiliares para páginas da web
-├── Services/                   # Exportadores e utilitários
-├── Program.cs                 # Classe principal do projeto
-├── fatec_demanda_data.csv     # Arquivo CSV gerado (após execução)
+├── Pages/                          # Classes auxiliares para páginas da web
+├── Services/                       # Exportadores e utilitários
+├── Program.cs                      # Classe principal do projeto
+├── export/fatec_demanda_data.csv   # Arquivo CSV gerado (após execução)
 │
-└── FatecDemandaDownloader.Tests/  # Projeto de testes MSTest
+└── FatecDemandaDownloader.Tests/   # Projeto de testes MSTest
 ```
 
 ---
